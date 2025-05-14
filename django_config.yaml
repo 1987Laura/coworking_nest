@@ -1,0 +1,16 @@
+# Schimba PROJECT_NAME cu numele proiectului
+coworking_nest:  
+        # Schimba APP_NAME1 cu numele aplicatiei
+        dropdesk:
+
+            - view_name: home
+              url_path_name: home
+              template_name: home
+            - view_name: about
+              url_path_name: about
+              template_name: about
+            - view_name: spaces
+              url_path_name: spaces
+              template_name: spaces
+
+        
