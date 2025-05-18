@@ -13,3 +13,11 @@ def about_view(request):
 def spaces_view(request):
 	context = {}
 	return render(request, 'spaces.html', context)
+
+def bookings_view(request):
+	context = {}
+	return render(request, 'bookings.html', context)
+
+def profile_view(request):
+	context = {}
+	return render(request, 'profile.html', context)

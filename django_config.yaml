@@ -1,7 +1,7 @@
 # Schimba PROJECT_NAME cu numele proiectului
 coworking_nest:  
         # Schimba APP_NAME1 cu numele aplicatiei
-        dropdesk:
+        deskdrop:
 
             - view_name: home
               url_path_name: home
@@ -12,5 +12,11 @@ coworking_nest:
             - view_name: spaces
               url_path_name: spaces
               template_name: spaces
+            - view_name: bookings
+              url_path_name: bookings
+              template_name: bookings
+            - view_name: profile
+              url_path_name: profile
+              template_name: profile
 
         
