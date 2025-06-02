@@ -169,8 +169,8 @@
             <div class="logo">NestDrop</div>
             <ul>
                 <li><a href="{% url 'home' %}">Acasă</a></li>
-                <li><a href="{% url 'about.html' %}">Despre</a></li>
-                <li><a href="{% url 'spaces' %}">Spații</a></li>
+                <li><a href="{% url 'about' %}">Despre</a></li>
+                <li><a href="{% url 'spaces' %}">Explorează spațiile</a></li>
                 <li><a href="{% url 'bookings' %}">Rezervări</a></li>
                 <li><a href="{% url 'profile' %}">Profil</a></li>
             </ul>
@@ -181,7 +181,7 @@
         <div class="hero-content">
             <h1>Bine ai venit la NestDrop</h1>
             <p>Descoperă spațiile noastre de coworking moderne și inspirate, perfecte pentru munca ta.</p>
-            <a href="#contact" class="cta-button">Rezervă Acum</a>
+            <a href="{% url 'spaces' %}" class="cta-button">Rezervă Acum</a>
         </div>
     </section>
 
