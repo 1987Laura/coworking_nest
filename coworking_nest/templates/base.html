@@ -1,0 +1,74 @@
+{# base.html #}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NestDrop{% endblock %}</title>
+
+    {% block head %}{% endblock %}  
+
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+<body>
+<header>
+    <nav>
+
+        <div class="logo">
+            <a href="{% url 'home' %}">NestDrop</a>
+        </div>
+
+        <ul>
+            <li><a href="{% url 'home' %}">Acasă</a></li>
+            <li><a href="{% url 'about' %}">Despre noi</a></li>
+            <li><a href="{% url 'spaces' %}">Explorează spațiile</a></li>
+            <li><a href="{% url 'bookings' %}">Rezervări</a></li>
+        
+            <li class="profile-menu">
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}">Profil</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <form action="{% url 'logout' %}" method="post" class="logout-form">
+                                {% csrf_token %}
+                                <button type="submit">Deconectare</button>
+                            </form>
+                        </li>
+                    </ul>
+            {% else %}
+                <a href="{% url 'login' %}">Intră în cont</a>
+            {% endif %}
+            
+             </li>
+
+        </ul>
+    
+    </nav>
+</header>
+
+
+<!-- breadcrumb simplu -->
+<div class="breadcrumb">
+    <a href="{% url 'home' %}">Acasă</a>
+    {% block breadcrumb %}
+        <!-- dacă pagina extinde block-ul, apare titlul -->
+    {% endblock breadcrumb %}
+</div>
+
+
+
+<main>
+    {% block content %}{% endblock content %}
+</main>
+
+<footer>
+    <p>&copy; 2025 NestDrop. Toate drepturile rezervate.</p>
+    <p>Contact: <a href="mailto:info@nestdrop.com">info@nestdrop.com</a></p>
+    <p><a href="{% url 'terms' %}">Termeni și Condiții</a> | <a href="{% url 'privacy' %}">Politica de Confidențialitate</a></p>
+</footer>
+</body>
+</html>

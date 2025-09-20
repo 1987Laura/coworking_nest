@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Rezervări{% endblock page_title %}
+
+{% block breadcrumb %}
+ › Rezervări
+{% endblock breadcrumb %}
+
+{% block content %}
+<div class="container" style="max-width: 800px; margin: 50px auto; text-align: center; padding: 20px;">
+    <h1 style="font-size: 2em; margin-bottom: 20px; color: #333;">Nu ești autentificat</h1>
+    <p style="font-size: 1.2em; color: #555;">
+        Pentru a vedea istoricul rezervărilor trebuie să te autentifici.
+    </p>
+
+    <div style="margin-top: 40px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="{% url 'login' %}" 
+           style="background-color: #4CAF50; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s;">
+            Autentificare
+        </a>
+        <a href="{% url 'spaces' %}" 
+           style="background-color: #777777; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s;">
+            Explorează spațiile
+        </a>
+    </div>
+</div>
+{% endblock content %}

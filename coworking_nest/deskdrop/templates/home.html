@@ -1,212 +1,42 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NestDrop - Acasă</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+{% extends 'base.html' %}
 
-        body {
-            color: #333;
-            line-height: 1.6;
-        }
+{% block breadcrumb %}
+ › Acasă 
+{% endblock breadcrumb %}
 
-        /* Header */
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+{% load static %}
 
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+{% block title %}Acasă - NestDrop{% endblock %}
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2ecc71;
-        }
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Bine ai venit la NestDrop</h1>
+        <p>Descoperă spațiile noastre de coworking moderne și inspirate, perfecte pentru munca ta.</p>
+        <a href="{% url 'spaces' %}" class="cta-button">Rezervă Acum</a>
+    </div>
+</section>
 
-        nav ul li a:hover {
-            color: #2ecc71;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: url('https://via.placeholder.com/1200x800') no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            background-color: rgba(0, 0, 0, 0.5);
-            background-blend-mode: overlay;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            padding: 0.8rem 2rem;
-            font-size: 1.1rem;
-            background-color: #2ecc71;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .cta-button:hover {
-            background-color: #27ae60;
-        }
-
-        /* Benefits Section */
-        .benefits {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 1rem;
-            text-align: center;
-        }
-
-        .benefits h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .benefit-cards {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .benefit-card {
-            flex: 1;
-            min-width: 250px;
-            padding: 1.5rem;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #2ecc71;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-
-        footer a {
-            color: #2ecc71;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .benefit-cards {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">NestDrop</div>
-            <ul>
-                <li><a href="{% url 'home' %}">Acasă</a></li>
-                <li><a href="{% url 'about' %}">Despre</a></li>
-                <li><a href="{% url 'spaces' %}">Explorează spațiile</a></li>
-                <li><a href="{% url 'bookings' %}">Rezervări</a></li>
-                <li><a href="{% url 'profile' %}">Profil</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Bine ai venit la NestDrop</h1>
-            <p>Descoperă spațiile noastre de coworking moderne și inspirate, perfecte pentru munca ta.</p>
-            <a href="{% url 'spaces' %}" class="cta-button">Rezervă Acum</a>
+<section class="benefits">
+    <h2>De ce NestDrop?</h2>
+    <div class="benefit-cards">
+        <div class="benefit-card">
+            <h3>Locuri Flexibile</h3>
+            <p>Alege spațiul care ți se potrivește, de la birouri private la zone comune.</p>
         </div>
-    </section>
-
-    <section class="benefits">
-        <h2>De ce NestDrop?</h2>
-        <div class="benefit-cards">
-            <div class="benefit-card">
-                <h3>Locuri Flexibile</h3>
-                <p>Alege spațiul care ți se potrivește, de la birouri private la zone comune.</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Comunitate Activă</h3>
-                <p>Conectează-te cu profesioniști și networking zilnic.</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Tehnologie Modernă</h3>
-                <p>Beneficiază de internet de mare viteză și echipamente de ultimă generație.</p>
-            </div>
+        <div class="benefit-card">
+            <h3>Comunitate Activă</h3>
+            <p>Conectează-te cu profesioniști și networking zilnic.</p>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 NestDrop. Toate drepturile rezervate.</p>
-        <p>Contact: <a href="mailto:info@nestdrop.com">info@nestdrop.com</a></p>
-        <p><a href="#terms">Termeni și Condiții</a> | <a href="#privacy">Politica de Confidențialitate</a></p>
-    </footer>
-</body>
-</html>
+        <div class="benefit-card">
+            <h3>Tehnologie Modernă</h3>
+            <p>Beneficiază de internet de mare viteză și echipamente de ultimă generație.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

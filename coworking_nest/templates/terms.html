@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Termeni și condiții{% endblock page_title %}
+
+{% block breadcrumb %}
+ › Termeni și condiții
+{% endblock breadcrumb %}
+
+{% block content %}
+<div class="container" style="max-width: 800px; margin: 50px auto; padding: 20px; text-align: center;">
+    <h1 style="font-size: 2.2rem; margin-bottom: 30px; color: #2ecc71;">Termeni și condiții</h1>
+    
+    <div style="text-align: left; line-height: 1.8; margin-top: 20px;">
+        <p>Bine ați venit pe NestDrop! Folosind acest site, sunteți de acord să respectați termenii și condițiile noastre. <br><br> Informațiile furnizate de utilizatori trebuie să fie corecte și complete. NestDrop nu poate fi tras la răspundere pentru eventuale pierderi sau daune cauzate de utilizarea site-ului.</p><br>
+        
+        <p>Ne rezervăm dreptul de a modifica acești termeni în orice moment, iar utilizatorii sunt încurajați să îi consulte periodic.</p><br>
+        
+        <p>Pentru orice nelămuriri, vă rugăm să ne contactați prin formularul de contact de pe site.</p><br>
+    </div>
+    <div style="margin-top: 40px;">
+        <a href="{% url 'spaces' %}" 
+           style="background-color: #2ecc71; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s;">
+            Explorează spațiile
+        </a>
+    </div>
+</div>
+{% endblock content %}

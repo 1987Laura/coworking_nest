@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bookings</title>
-</head>
-<body>
-    <h1>bookings</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+ › Rezervările Mele 
+{% endblock breadcrumb %}
+
+{% block title %}Rezervările Mele - NestDrop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Rezervările mele</h2>
+    {% if bookings %}
+        <ul>
+            {% for booking in bookings %}
+                <li>
+                    <strong>{{ booking.space.name }}</strong> – {{ booking.date }} la {{ booking.time }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nu ai rezervări active momentan.</p>
+    {% endif %}
+</div>
+{% endblock %}

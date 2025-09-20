@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Politica de confidențialitate{% endblock page_title %}
+
+{% block breadcrumb %}
+ › Politica de confidențialitate
+{% endblock breadcrumb %}
+
+{% block content %}
+<div class="container" style="max-width: 800px; margin: 50px auto; padding: 20px; text-align: center;">
+    <h1 style="font-size: 2.2rem; margin-bottom: 30px; color: #2ecc71;">Politica de confidențialitate</h1>
+    
+    <div style="text-align: left; line-height: 1.8; margin-top: 20px;">
+        <p>NestDrop respectă confidențialitatea utilizatorilor săi. Datele colectate sunt folosite doar pentru a îmbunătăți experiența pe site și pentru procesarea rezervărilor.</p> <br>
+        
+        <p>Datele personale nu sunt vândute sau împărtășite cu terțe părți fără consimțământul explicit al utilizatorului, cu excepția situațiilor prevăzute de lege.</p><br>
+        
+        <p>Vă recomandăm să consultați periodic această politică pentru a fi la curent cu eventualele modificări.</p><br>
+    </div>
+     <div style="margin-top: 40px;">
+        <a href="{% url 'spaces' %}" 
+           style="background-color: #2ecc71; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s;">
+            Explorează spațiile
+        </a>
+    </div>
+</div>
+{% endblock content %}

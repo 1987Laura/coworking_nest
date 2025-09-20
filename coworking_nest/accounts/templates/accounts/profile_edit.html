@@ -1,0 +1,16 @@
+{# accounts/templates/accounts/profile_edit.html #}
+{% extends 'base.html' %}
+
+{% block title %}Editează Profilul - NestDrop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Editează Profilul</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvează Modificările</button>
+    </form>
+    <p><a href="{% url 'profile' %}">Anulează și Revino la Profil</a></p>
+</div>
+{% endblock %}

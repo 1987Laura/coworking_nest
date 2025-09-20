@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about</title>
-</head>
-<body>
-    <h1>about</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+ › Despre noi
+{% endblock breadcrumb %}
+
+{% load static %}
+
+{% block title %}Despre noi- NestDrop{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <h2>Despre noi </h2>
+    <p>La NestDrop, credem că spațiul de lucru potrivit poate transforma modul în care lucrezi și colaborezi. Suntem o platformă dedicată să aducem în fața ta cele mai moderne, accesibile și flexibile spații de coworking, pentru ca tu să-ți poți dezvolta ideile și proiectele într-un mediu inspirațional.</p>
+    
+    <p>Misiunea noastră este să simplificăm accesul la spații de lucru care se potrivesc nevoilor tale, fie că ești freelancer, startup sau echipă mică, oferindu-ți o experiență intuitivă, transparentă și prietenoasă. Ne pasă de comunitatea pe care o creăm împreună și ne dorim să contribuim la creșterea și conectarea oamenilor talentați în cele mai bune locuri.</p>
+    
+    <p>NestDrop este mai mult decât o platformă — este partenerul tău în căutarea unui spațiu care să îți inspire creativitatea și productivitatea. Descoperă, rezervă și conectează-te cu spații care te susțin în fiecare zi!</p>
+</div>
+{% endblock %}

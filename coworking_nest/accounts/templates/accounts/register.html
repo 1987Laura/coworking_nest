@@ -1,0 +1,16 @@
+{# register.html #}
+{% extends 'base.html' %}
+{% block title %}Înregistrare - NestDrop{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Înregistrare</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Înregistrează-te</button>
+    </form>
+    <div class="link">
+        <p>Ai deja un cont? <a href="{% url 'login' %}">Autentifică-te aici</a>.</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{# accounts/templates/accounts/account_overview.html #}
+{% extends 'base.html' %}
+
+{% block title %}Contul Meu - NestDrop{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Bun venit, {{ user.username }}!</h2>
+    <p>Acesta este panoul de control al contului tău.</p>
+
+    <h3>Informațiile tale:</h3>
+    <ul>
+        <li>Nume de utilizator: {{ user.username }}</li>
+        <li>Email: {{ user.email }}</li>
+        {# Add more user-specific info here #}
+        {% if user.first_name %}
+        <li>Nume: {{ user.first_name }} {{ user.last_name }}</li>
+        {% endif %}
+    </ul>
+
+    <h3>Opțiuni Cont:</h3>
+    <ul>
+        <li><a href="{% url 'profile_edit' %}">Editează Profilul</a></li> 
+        {#<li><a href="{% url 'change_password' %}">Schimbă Parola</a></li> #}
+        {# Add links to user's bookings, messages, etc. #}
+        {#<li><a href="{% url 'user_bookings' %}">Vezi Rezervările Mele</a></li> #}
+    </ul>
+
+   
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+ › Rezervare
+{% endblock breadcrumb %}
+
+{% block title %}Rezervare - {{ space.name }}{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Rezervă: {{ space.name }}</h2>
+    <p>Locație: {{ space.location }}</p>
+    <p>Capacitate: {{ space.capacity }}</p>
+    <p>Preț: {{ space.price_per_hour }} RON/oră</p>
+    <p><em>Formularul de rezervare urmează să fie implementat.</em></p>
+</div>
+{% endblock %}
