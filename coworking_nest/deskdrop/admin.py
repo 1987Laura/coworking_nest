@@ -16,6 +16,7 @@ class SpaceAdmin(admin.ModelAdmin):
 
 @admin.register(Booking)
 class BookingsAdmin(admin.ModelAdmin):
-    list_display = ('space', 'user', 'start_date', 'end_date')
-    list_filter = ('start_date', 'space')
+    list_display = ('user', 'space', 'date', 'start_time', 'hours_reserved', 'total_price')
+    list_filter = ('date',)
+
     

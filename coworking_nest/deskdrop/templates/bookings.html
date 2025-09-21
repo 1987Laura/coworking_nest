@@ -13,7 +13,7 @@
         <ul>
             {% for booking in bookings %}
                 <li>
-                    <strong>{{ booking.space.name }}</strong> – {{ booking.date }} la {{ booking.time }}
+                    <strong>{{ booking.space.name }}</strong> – {{ booking.date }} la {{ booking.start_time }}
                 </li>
             {% endfor %}
         </ul>
